@@ -100,7 +100,6 @@ li > a {
 	display: flex;
 	width: 100%;
 	height: 356px;
-	/* border: 0.5px solid black; */
 	align-items: flex-end;
 	justify-content: space-between;
 }
@@ -110,7 +109,7 @@ li > a {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	height: 243px;
+	height: 240px;
 }
 
 .testi-pict {
@@ -134,7 +133,7 @@ li > a {
 	font-weight: 300;
 	text-align: center;
 	max-width: 272px;
-	height: 79px;
+	height: 75px;
 	overflow: hidden;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
@@ -143,11 +142,79 @@ li > a {
 }
 .specials {
 	display: flex;
+	align-items: flex-end;
+	padding-bottom: 30px;
 	width: 100%;
 	height: 559px;
-	/* background: white; */
+	/* border: 0.5px solid black; */
 }
 
+.specials img {
+	height: 417px;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	border-radius: 16px;
+}
+
+.special-texts {
+	height: 417px;
+	/* width: 900px; */
+	padding-left: 31px;
+	display: flex;
+	flex-direction: column;
+}
+
+.spec-title {
+	font-family: var(--font-markazi);
+	font-size: 40px;
+	font-weight: bold;
+	color: #878786;
+}
+
+.spec-menutitle {
+	font-family: var(--font-karla);
+	font-size: 45px;
+	font-weight: bold;
+	color: #2a443b;
+	padding-bottom: 20px;
+}
+
+.spec-intro {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	font-family: var(--font-karla);
+	font-size: 20px;
+	font-weight: 300;
+	color: #000000;
+	padding-top: 10px;
+}
+
+.spec-desc {
+	font-family: var(--font-karla);
+	font-size: 18px;
+	line-height: 1.5;
+	color: #000000;
+	padding: 25px 0;
+}
+
+.spec-button {
+	height: 58px;
+	width: 220px;
+	background-color: #495e57;
+	border-radius: 15px;
+	color: white;
+	font-family: var(--font-karla);
+	font-size: 25px;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	cursor: pointer;
+}
+
+.spec-button:active {
+	background-color: #2b4b40;
+}
 .menus {
 	display: flex;
 	width: 100%;
