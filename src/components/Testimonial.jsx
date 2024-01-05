@@ -27,7 +27,7 @@ export default function Testimonial() {
 	return (
 		<div className="testimonials">
 			{data.map((item) => (
-				<div className="testi-card">
+				<div className="testi-card" key={item.pict}>
 					<img
 						src={require(`../assets/images/${item.pict}.jpg`)}
 						alt="User Profile"

@@ -2,6 +2,7 @@ import React from "react";
 import Intro from "./Intro";
 import Testimonial from "./Testimonial";
 import Specials from "./Specials";
+import Menus from "./Menus";
 
 export default function Main() {
 	return (
@@ -9,7 +10,7 @@ export default function Main() {
 			<Intro />
 			<Testimonial />
 			<Specials />
-			<div className="menus">Menus</div>
+			<Menus />
 		</div>
 	);
 }
