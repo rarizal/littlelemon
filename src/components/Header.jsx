@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/images/Logo.svg";
+import { Link } from "react-router-dom";
 
 export default function Header() {
 	return (
@@ -9,22 +10,22 @@ export default function Header() {
 				<nav>
 					<ul className="navigation">
 						<li>
-							<a href="/#">Home</a>
+							<Link to="/">Home</Link>
 						</li>
 						<li>
-							<a href="/#">Reservation</a>
+							<Link to="/online-order">Reservation</Link>
 						</li>
 						<li>
-							<a href="/#">About</a>
+							<Link to="/#">About</Link>
 						</li>
 						<li>
-							<a href="/#">Menu</a>
+							<Link to="/#">Menus</Link>
 						</li>
 						<li>
-							<a href="/#">Online Order</a>
+							<Link to="/online-order">Online Order</Link>
 						</li>
 						<li>
-							<a href="/#">Login</a>
+							<Link to="/#">Login</Link>
 						</li>
 					</ul>
 				</nav>

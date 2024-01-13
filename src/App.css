@@ -300,7 +300,7 @@ li > a {
 
 .menu-button-add {
 	background: #495e57;
-	width: 70px;
+	width: 100px;
 	height: 35px;
 	border-radius: 16px;
 	font-family: var(--font-karla);
@@ -310,6 +310,42 @@ li > a {
 	cursor: pointer;
 }
 
+.menu-edit-order {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	background: rgba(73, 95, 88, 0.1);
+	width: 100px;
+	height: 35px;
+	border-radius: 16px;
+	font-family: var(--font-karla);
+	font-weight: bold;
+	color: #495e57;
+}
+
+.button-order {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #495e57;
+	height: 35px;
+	border-radius: 16px;
+	aspect-ratio: 1/1;
+	font-weight: 800;
+	color: white;
+	cursor: pointer;
+}
+
+.button-order:active {
+	scale: 0.9;
+}
+
+.button-order:hover {
+	background: rgb(75, 121, 6);
+	transition: 200ms;
+}
+
 .menu-button-add:hover {
 	background: #8aa729;
 	transition: 200ms;
@@ -317,7 +353,7 @@ li > a {
 .separator-top {
 	background-color: #495e57;
 	height: 5px;
-	width: 300px;
+	width: 350px;
 	border-radius: 5px;
 }
 
@@ -378,4 +414,65 @@ li > a {
 	font-family: var(--font-karla);
 	font-weight: 500;
 	font-size: 20px;
+}
+
+.sum-and-cont {
+	display: flex;
+	flex-direction: row;
+	column-gap: 20px;
+}
+.order-sum {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 16px;
+	width: 100%;
+	height: auto;
+	background: rgb(225, 233, 231);
+	padding-bottom: 35px;
+	padding: 0px 30px 30px 30px;
+}
+
+.cont-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 10px;
+	width: 300px;
+	background: rgb(225, 233, 231);
+	border-radius: 16px;
+	cursor: pointer;
+}
+
+.cont-button:hover {
+	background: rgb(136, 155, 151);
+	scale: 1.02;
+	transition: 200ms;
+}
+
+.order-details {
+	margin-top: 30px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	column-gap: 20px;
+}
+
+.options {
+	background: rgb(203, 203, 203);
+	font-family: var(--font-karla);
+	width: 150px;
+	height: 32px;
+	border-radius: 4px;
+	font-family: var(--font-karla);
+	font-size: 20px;
+	border: none;
+	padding: 0;
+}
+
+.order-sum-title {
+	font-family: var(--font-markazi);
+	font-size: 35px;
+	padding-bottom: 5px;
 }

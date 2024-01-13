@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import motorbike from "../assets/images/motorbike.png";
 import table from "../assets/images/table.png";
+import { useOrder } from "../contexts/OrderContext";
 
 export default function Menus() {
+	const { order } = useOrder();
+
 	const data = [
 		{
 			title: "Oseng-Oseng Kacang",
@@ -53,6 +56,42 @@ export default function Menus() {
 			desc: "The chicken is marinated in a flavorful blend of herbs, spices, and seasonings to enhance its taste. The charcoal cooking method gives the chicken a distinctive smoky flavor and crispy outer layer, while keeping the meat juicy and tender on the inside.",
 		},
 	];
+
+	const [isFalse, setIsFalse] = useState(false);
+
+	function toggleFalse() {
+		setIsFalse(!isFalse);
+	}
+
+	// Check if the menu is available on the ordered menu
+	function checkMenu(menutitle) {
+		return order.orderedmenu.some((menu) => menu.item.includes(menutitle));
+	}
+
+	function cariIndex(menutitle) {
+		const isAda = (el) => el.item === menutitle;
+		return order.orderedmenu.findIndex(isAda);
+	}
+
+	function addQty(index) {
+		const unit = order.orderedmenu[index];
+		unit.qty += 1;
+	}
+
+	function remQty(index) {
+		const unit = order.orderedmenu[index];
+		unit.qty -= 1;
+
+		if (unit.qty <= 0) {
+			order.orderedmenu.splice(index, 1);
+		}
+	}
+
+	function findQty(index) {
+		const unit = order.orderedmenu[index];
+		return unit.qty;
+	}
+
 	return (
 		<div className="menus">
 			<div className="menu-title">
@@ -76,7 +115,45 @@ export default function Menus() {
 										${item.price.toFixed(2)}
 									</div>
 								</div>
-								<button className="menu-button-add">Add</button>
+
+								{checkMenu(item.title) ? (
+									<div className="menu-edit-order">
+										<div
+											className="button-order"
+											onClick={() => {
+												remQty(cariIndex(item.title));
+												toggleFalse();
+											}}
+										>
+											-
+										</div>
+										<div>
+											{findQty(cariIndex(item.title))}
+										</div>
+										<div
+											className="button-order"
+											onClick={() => {
+												addQty(cariIndex(item.title));
+												toggleFalse();
+											}}
+										>
+											+
+										</div>
+									</div>
+								) : (
+									<button
+										className="menu-button-add"
+										onClick={() => {
+											order.orderedmenu.push({
+												item: item.title,
+												qty: 1,
+											});
+											toggleFalse();
+										}}
+									>
+										Add
+									</button>
+								)}
 							</div>
 							<div className="menu-item-desc">{item.desc}</div>
 						</div>
